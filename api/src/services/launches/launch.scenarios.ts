@@ -1,0 +1,157 @@
+export const standard = defineScenario({
+  launch: {
+    one: {
+      data: {
+        fairings: {
+          reused: false,
+          recovery_attempt: false,
+          recovered: false,
+          ships: [],
+        },
+        links: {
+          patch: {
+            small: 'https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png',
+            large: 'https://images2.imgbox.com/40/e3/GypSkayF_o.png',
+          },
+          reddit: {
+            campaign: null,
+            launch: null,
+            media: null,
+            recovery: null,
+          },
+          flickr: {
+            small: [],
+            original: [],
+          },
+          presskit: null,
+          webcast: 'https://www.youtube.com/watch?v=0a_00nJ_Y88',
+          youtube_id: '0a_00nJ_Y88',
+          article:
+            'https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html',
+          wikipedia: 'https://en.wikipedia.org/wiki/DemoSat',
+        },
+        static_fire_date_utc: '2006-03-17T00:00:00.000Z',
+        static_fire_date_unix: 1142553600,
+        net: false,
+        window: 0,
+        rocket: '5e9d0d95eda69955f709d1eb',
+        success: false,
+        failures: [
+          {
+            time: 33,
+            altitude: null,
+            reason: 'merlin engine failure',
+          },
+        ],
+        details: 'Engine failure at 33 seconds and loss of vehicle',
+        crew: [],
+        ships: [],
+        capsules: [],
+        payloads: ['5eb0e4b5b6c3bb0006eeb1e1'],
+        launchpad: '5e9e4502f5090995de566f86',
+        flight_number: 1,
+        name: 'FalconSat',
+        date_utc: '2006-03-24T22:30:00.000Z',
+        date_unix: 1143239400,
+        date_local: '2006-03-25T10:30:00+12:00',
+        date_precision: 'hour',
+        upcoming: false,
+        cores: [
+          {
+            core: '5e9e289df35918033d3b2623',
+            flight: 1,
+            gridfins: false,
+            legs: false,
+            reused: false,
+            landing_attempt: false,
+            landing_success: null,
+            landing_type: null,
+            landpad: null,
+          },
+        ],
+        auto_update: true,
+        tbd: false,
+        launch_library_id: null,
+        id: '5eb87cd9ffd86e000604b32a',
+      },
+    },
+    two: {
+      data: {
+        fairings: {
+          reused: false,
+          recovery_attempt: false,
+          recovered: false,
+          ships: [],
+        },
+        links: {
+          patch: {
+            small: 'https://images2.imgbox.com/4f/e3/I0lkuJ2e_o.png',
+            large: 'https://images2.imgbox.com/be/e7/iNqsqVYM_o.png',
+          },
+          reddit: {
+            campaign: null,
+            launch: null,
+            media: null,
+            recovery: null,
+          },
+          flickr: {
+            small: [],
+            original: [],
+          },
+          presskit: null,
+          webcast: 'https://www.youtube.com/watch?v=Lk4zQ2wP-Nc',
+          youtube_id: 'Lk4zQ2wP-Nc',
+          article:
+            'https://www.space.com/3590-spacex-falcon-1-rocket-fails-reach-orbit.html',
+          wikipedia: 'https://en.wikipedia.org/wiki/DemoSat',
+        },
+        static_fire_date_utc: null,
+        static_fire_date_unix: null,
+        net: false,
+        window: 0,
+        rocket: '5e9d0d95eda69955f709d1eb',
+        success: false,
+        failures: [
+          {
+            time: 301,
+            altitude: 289,
+            reason: 'harmonic oscillation leading to premature engine shutdown',
+          },
+        ],
+        details:
+          'Successful first stage burn and transition to second stage, maximum altitude 289 km, Premature engine shutdown at T+7 min 30 s, Failed to reach orbit, Failed to recover first stage',
+        crew: [],
+        ships: [],
+        capsules: [],
+        payloads: ['5eb0e4b6b6c3bb0006eeb1e2'],
+        launchpad: '5e9e4502f5090995de566f86',
+        flight_number: 2,
+        name: 'DemoSat',
+        date_utc: '2007-03-21T01:10:00.000Z',
+        date_unix: 1174439400,
+        date_local: '2007-03-21T13:10:00+12:00',
+        date_precision: 'hour',
+        upcoming: false,
+        cores: [
+          {
+            core: '5e9e289ef35918416a3b2624',
+            flight: 1,
+            gridfins: false,
+            legs: false,
+            reused: false,
+            landing_attempt: false,
+            landing_success: null,
+            landing_type: null,
+            landpad: null,
+          },
+        ],
+        auto_update: true,
+        tbd: false,
+        launch_library_id: null,
+        id: '5eb87cdaffd86e000604b32b',
+      },
+    },
+  },
+})
+
+export type StandardScenario = typeof standard

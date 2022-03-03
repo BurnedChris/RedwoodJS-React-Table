@@ -3,8 +3,10 @@ import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 import { RedwoodReactQueryProvider } from './libs/ReactQueryProvider'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental'
 import { ReactQueryDevtools } from 'react-query/devtools'
-
+import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
+import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 import './index.css'
 
 const queryClient = new QueryClient({
@@ -15,6 +17,17 @@ const queryClient = new QueryClient({
     },
   },
 })
+
+if (isBrowser) {
+  const localStoragePersistor = createWebStoragePersistor({
+    storage: window.localStorage,
+  })
+
+  persistQueryClient({
+    queryClient,
+    persistor: localStoragePersistor,
+  })
+}
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>

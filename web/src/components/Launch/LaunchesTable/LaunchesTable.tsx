@@ -55,42 +55,44 @@ export const QUERY = gql`
 `
 
 export const Loading = ({ tableVariables }): ReactElement => (
-  <TwTable.table>
-    <TwTable.thead>
-      <TwTable.tr className="animate-pulse" key="table-header">
-        <TwTable.th key="table-header"></TwTable.th>
-        {[...Array(7).keys()].map((column, index) => {
-          return (
-            <TwTable.th
-              key={`${index}-th`}
-              // key={column.accessor}
-            >
-              <div className="py-0.5 h-4 w-20 bg-gray-300  dark:bg-nord-3 rounded-md"></div>
-            </TwTable.th>
-          )
-        })}
-        <TwTable.th type="empty" key="end-th">
-          <div className="py-0.5 float-right h-4 w-20 bg-gray-300  dark:bg-nord-3 rounded-md"></div>
-        </TwTable.th>
-      </TwTable.tr>
-    </TwTable.thead>
-
-    <TwTable.tbody x-max="1">
-      {[...Array(tableVariables.limit).keys()].map((_, rowIndex) => (
-        <TwTable.tr className="animate-pulse" key={`${rowIndex}-table-row`}>
-          <TwTable.td key="empty-td"></TwTable.td>
-          {[...Array(7).keys()].map((_, colIndex) => (
-            <TwTable.td key={`${colIndex}-col`}>
-              <div className="h-4 w-20 bg-gray-200 dark:bg-gray-500 rounded-md my-0.5"></div>
-            </TwTable.td>
-          ))}
-          <TwTable.td key="end-td">
-            <div className="float-right h-6 w-20 bg-gray-200  dark:bg-gray-500 rounded-md my-0.5"></div>
-          </TwTable.td>
+  <div className="p-4 mb-4 bg-nord-3 sm:rounded-lg overflow-hidden">
+    <TwTable.table>
+      <TwTable.thead>
+        <TwTable.tr className="animate-pulse" key="table-header">
+          <TwTable.th key="table-header"></TwTable.th>
+          {[...Array(5).keys()].map((column, index) => {
+            return (
+              <TwTable.th
+                key={`${index}-th`}
+                // key={column.accessor}
+              >
+                <div className="py-0.5 h-4 w-20 bg-gray-300  dark:bg-nord-3 rounded-md"></div>
+              </TwTable.th>
+            )
+          })}
+          <TwTable.th type="empty" key="end-th">
+            <div className="py-0.5 float-right h-4 w-20 bg-gray-300  dark:bg-nord-3 rounded-md"></div>
+          </TwTable.th>
         </TwTable.tr>
-      ))}
-    </TwTable.tbody>
-  </TwTable.table>
+      </TwTable.thead>
+
+      <TwTable.tbody x-max="1">
+        {[...Array(tableVariables.limit).keys()].map((_, rowIndex) => (
+          <TwTable.tr className="animate-pulse" key={`${rowIndex}-table-row`}>
+            <TwTable.td key="empty-td"></TwTable.td>
+            {[...Array(5).keys()].map((_, colIndex) => (
+              <TwTable.td key={`${colIndex}-col`}>
+                <div className="h-4 w-20 bg-gray-200 dark:bg-gray-500 rounded-md my-0.5"></div>
+              </TwTable.td>
+            ))}
+            <TwTable.td key="end-td">
+              <div className="float-right h-6 w-20 bg-gray-200  dark:bg-gray-500 rounded-md my-0.5"></div>
+            </TwTable.td>
+          </TwTable.tr>
+        ))}
+      </TwTable.tbody>
+    </TwTable.table>
+  </div>
 )
 
 export const Empty = (): ReactElement => {

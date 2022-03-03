@@ -61,7 +61,7 @@ const th = (props: {
           key={props.key}
           className={clsx(
             props.className,
-            'relative px-6 py-3 bg-gray-100  first-of-type:rounded-l-lg last:rounded-r-lg'
+            'relative px-6 py-3 bg-nord-2 text-gray-100 first-of-type:rounded-l-lg last:rounded-r-lg'
           )}
         />
       )
@@ -74,7 +74,7 @@ const th = (props: {
           key={props.key}
           className={clsx(
             props.className,
-            'px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-100 first-of-type:text-left last:text-right first-of-type:rounded-l-lg last:rounded-r-lg'
+            'px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider bg-nord-2 first-of-type:text-left last:text-right first-of-type:rounded-l-lg last:rounded-r-lg'
           )}
         />
       )
@@ -103,7 +103,7 @@ const tr = (props: {
       {...props}
       className={clsx(
         props.className,
-        'border-b border-gray-200 -7 last:border-0'
+        'border-b border-nord-1 text-white last:border-0'
       )}
       key={props.key}
     />
@@ -126,8 +126,6 @@ const table = (props: {
 const thead = (props: {
   children: ReactNode
   className?: string
-}): ReactElement => (
-  <thead {...props} className={clsx(props.className, 'bg-gray-50')} />
-)
+}): ReactElement => <thead {...props} className={props.className} />
 
 export default { td, tbody, tr, th, thead, table }

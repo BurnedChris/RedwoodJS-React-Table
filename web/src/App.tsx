@@ -1,11 +1,11 @@
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
-
-import './scaffold.css'
-import './index.css'
 import { RedwoodReactQueryProvider } from './libs/ReactQueryProvider'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+import './index.css'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,6 +22,7 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <RedwoodReactQueryProvider>
           <Routes />
+          <ReactQueryDevtools initialIsOpen={false} />
         </RedwoodReactQueryProvider>
       </QueryClientProvider>
     </RedwoodProvider>

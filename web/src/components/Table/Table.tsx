@@ -194,7 +194,7 @@ const Table = ({
       <div
         className={clsx(
           tableClassName,
-          'p-4 mb-4 bg-white sm:rounded-lg overflow-hidden'
+          'p-4 mb-4 bg-nord-3 sm:rounded-lg overflow-hidden'
         )}
       >
         <TwTable.table {...getTableProps()}>

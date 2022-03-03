@@ -26,21 +26,21 @@ const Pagination = ({
         <button
           disabled={!canPreviousPage}
           onClick={() => previousPage()}
-          className="relative inline-flex items-center px-4 py-2  rounded text-sm font-medium  text-nord-3 dark: bg-black-500 hover:bg-leafy-600 disabled:cursor-not-allowed"
+          className="relative inline-flex items-center px-4 py-2 rounded text-sm font-medium text-white  bg-black-500 hover:bg-leafy-600 disabled:cursor-not-allowed"
         >
           Previous
         </button>
         <button
           disabled={!canNextPage}
           onClick={() => nextPage()}
-          className="ml-3 relative inline-flex items-center px-4 py-2  rounded text-sm font-medium  text-nord-3 dark: hover:bg-leafy-600 disabled:cursor-not-allowed"
+          className="ml-3 relative inline-flex items-center px-4 py-2 rounded text-sm font-medium text-white hover:bg-leafy-600 disabled:cursor-not-allowed"
         >
           Next
         </button>
       </div>
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm text-secondary">
+          <p className="text-sm text-white">
             Showing{' '}
             <span className="font-medium">{paginate.startIndex || 1}</span> to{' '}
             <span className="font-medium"> {paginate.endIndex + 1} </span> of{' '}
@@ -56,7 +56,7 @@ const Pagination = ({
               <button
                 disabled={!canPreviousPage}
                 onClick={() => previousPage()}
-                className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-nord-3 dark: hover:bg-leafy-600 border-none"
+                className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-white hover:bg-leafy-600 border-none"
               >
                 <span className="sr-only">Previous</span>
                 <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
@@ -67,10 +67,10 @@ const Pagination = ({
               {!paginate.pages.includes(1) && (
                 <button
                   onClick={() => gotoPage(1)}
-                  className="transition flex items-center justify-center  group text-nord-3 dark: relative px-4 py-2  text-sm font-medium border-none"
+                  className="transition flex items-center justify-center group text-white relative px-4 py-2  text-sm font-medium border-none"
                 >
-                  <span className="h-8 w-8 rounded absolute group-hover:bg-heart-600 group-hover: transition" />
-                  <span className="transition group-hover: z-10">
+                  <span className="h-8 w-8 rounded absolute group-hover:bg-amber-600 group-hover:text-white transition" />
+                  <span className="transition text-white group-hover:text-white z-10">
                     1
                   </span>
                 </button>
@@ -81,16 +81,16 @@ const Pagination = ({
                   <Menu>
                     {({ open }) => (
                       <>
-                        <Menu.Button className="transition flex items-center justify-center  group text-nord-3 dark: relative px-4 py-2  text-sm font-medium focus:outline-none">
+                        <Menu.Button className="transition flex items-center justify-center  group text-white relative px-4 py-2  text-sm font-medium focus:outline-none">
                           <span
                             className={clsx(
-                              'h-8 w-8  absolute rounded group-hover:bg-heart-600 group-hover: transition',
-                              open && 'bg-heart-500 bg-opacity-50 !'
+                              'h-8 w-8  absolute rounded group-hover:bg-amber-600 group-hover:text-white transition',
+                              open && 'bg-amber-500 bg-opacity-50!'
                             )}
                           />
                           <span
                             className={clsx(
-                              'transition group-hover: z-10',
+                              'transition group-hover:text-white z-10',
                               open && ''
                             )}
                           >
@@ -140,10 +140,10 @@ const Pagination = ({
                                     >
                                       <span
                                         className={clsx(
-                                          'h-8 w-8  rounded absolute group-hover:bg-heart-600 group-hover: transition'
+                                          'h-8 w-8  rounded absolute group-hover:bg-amber-600 group-hover:text-white transition'
                                         )}
                                       />
-                                      <span className="transition group-hover: z-10">
+                                      <span className="transition group-hover:text-white z-10">
                                         {i + 2}
                                       </span>
                                     </button>
@@ -166,13 +166,13 @@ const Pagination = ({
                   onClick={() => gotoPage(index)}
                   key={index}
                   className={clsx(
-                    'transition flex items-center justify-center group text-nord-3 dark: relative px-4 py-2  text-sm font-medium border-none'
+                    'transition flex items-center justify-center group text-white relative px-4 py-2  text-sm font-medium border-none'
                   )}
                 >
                   <span
                     className={clsx(
-                      'h-8 w-8 rounded absolute group-hover:bg-heart-600 group-hover: transition',
-                      paginate.currentPage === index && 'bg-heart-500'
+                      'h-8 w-8 rounded absolute group-hover:bg-amber-600 group-hover:text-white transition',
+                      paginate.currentPage === index && 'bg-amber-500'
                     )}
                   />
                   <span
@@ -192,16 +192,16 @@ const Pagination = ({
                 <Menu>
                   {({ open }) => (
                     <>
-                      <Menu.Button className="transition flex items-center justify-center  group text-nord-3 dark: relative px-4 py-2  text-sm font-medium focus:outline-none">
+                      <Menu.Button className="transition flex items-center justify-center  group text-white relative px-4 py-2  text-sm font-medium focus:outline-none">
                         <span
                           className={clsx(
-                            'h-8 w-8  absolute rounded group-hover:bg-heart-600 group-hover: transition',
-                            open && 'bg-heart-500 bg-opacity-50 !'
+                            'h-8 w-8  absolute rounded group-hover:bg-amber-600 group-hover:text-white transition',
+                            open && 'bg-amber-500 bg-opacity-50 !'
                           )}
                         />
                         <span
                           className={clsx(
-                            'transition group-hover: z-10',
+                            'transition group-hover:text-white z-10',
                             open && ''
                           )}
                         >
@@ -253,10 +253,10 @@ const Pagination = ({
                                     >
                                       <span
                                         className={clsx(
-                                          'h-8 w-8  rounded absolute group-hover:bg-heart-600 group-hover: transition'
+                                          'h-8 w-8 rounded absolute group-hover:bg-amber-600 group-hover:text-white transition'
                                         )}
                                       />
-                                      <span className="transition group-hover: z-10">
+                                      <span className="transition text-white group-hover:text-white z-10">
                                         {i + paginate.endPage}
                                       </span>
                                     </button>
@@ -276,10 +276,10 @@ const Pagination = ({
                   onClick={() => {
                     gotoPage(paginate.totalPages)
                   }}
-                  className="transition flex items-center justify-center  group text-text-nord-3 dark: relative px-4 py-2  text-sm font-medium border-none"
+                  className="transition flex items-center justify-center  group text-text-white relative px-4 py-2  text-sm font-medium border-none"
                 >
-                  <span className="h-8 w-8  absolute rounded group-hover:bg-heart-600 group-hover: transition" />
-                  <span className="transition group-hover: z-10">
+                  <span className="h-8 w-8 absolute rounded group-hover:bg-amber-600 group-hover:text-white transition" />
+                  <span className="text-white transition group-hover:text-white  z-10">
                     {paginate.totalPages}
                   </span>
                 </button>
@@ -290,7 +290,7 @@ const Pagination = ({
               <button
                 disabled={!canNextPage}
                 onClick={() => nextPage()}
-                className="relative inline-flex items-center rounded px-2 py-2  text-sm font-medium text-nord-3 dark: hover:bg-leafy-600 cursor-pointer"
+                className="relative inline-flex items-center rounded px-2 py-2 text-sm font-medium text-white hover:bg-leafy-600 cursor-pointer"
               >
                 <span className="sr-only">Next</span>
                 <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />

@@ -11,3 +11,7 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+
+ html, body {
+   @apply bg-nord-1 h-full;
+ }
